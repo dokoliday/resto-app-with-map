@@ -1,0 +1,317 @@
+[
+	{
+		"area": "Belleville"
+	},
+	{
+		"area": "Charonne"
+	},
+	{
+		"area": "SoPi (South Pigalle)"
+	},
+	{
+		"area": "Roquette"
+	},
+	{
+		"area": "2e arrondissement"
+	},
+	{
+		"area": "Canal Saint-Martin"
+	},
+	{
+		"area": "Folie-Méricourt"
+	},
+	{
+		"area": "Mairie du 18e"
+	},
+	{
+		"area": "Quartier latin"
+	},
+	{
+		"area": "Le Marais"
+	},
+	{
+		"area": "Les Halles"
+	},
+	{
+		"area": "8e arrondissement"
+	},
+	{
+		"area": "Poissonnière"
+	},
+	{
+		"area": "Saint-Georges"
+	},
+	{
+		"area": "Grands Boulevards"
+	},
+	{
+		"area": "Arts et Métiers"
+	},
+	{
+		"area": "Pigalle"
+	},
+	{
+		"area": "Chaussée-d'Antin"
+	},
+	{
+		"area": "13e arrondissement"
+	},
+	{
+		"area": "Montmartre"
+	},
+	{
+		"area": "Où"
+	},
+	{
+		"area": "Strasbourg-Saint-Denis"
+	},
+	{
+		"area": "Faubourg Montmartre"
+	},
+	{
+		"area": "1er arrondissement"
+	},
+	{
+		"area": "17e arrondissement"
+	},
+	{
+		"area": "12e arrondissement"
+	},
+	{
+		"area": "3e arrondissement"
+	},
+	{
+		"area": "5e arrondissement"
+	},
+	{
+		"area": "16e arrondissement"
+	},
+	{
+		"area": "Jaurès"
+	},
+	{
+		"area": "Réaumur"
+	},
+	{
+		"area": "Necker"
+	},
+	{
+		"area": "Saint-Ambroise"
+	},
+	{
+		"area": "Ecole Militaire"
+	},
+	{
+		"area": "4e arrondissement"
+	},
+	{
+		"area": "6e arrondissement"
+	},
+	{
+		"area": "Ternes"
+	},
+	{
+		"area": "Goutte d'Or"
+	},
+	{
+		"area": "20e arrondissement"
+	},
+	{
+		"area": "Invalides"
+	},
+	{
+		"area": "9e arrondissement"
+	},
+	{
+		"area": "La Madeleine"
+	},
+	{
+		"area": "Champs-Elysées"
+	},
+	{
+		"area": "La Villette"
+	},
+	{
+		"area": "Butte-aux-Cailles"
+	},
+	{
+		"area": "Bel-Air"
+	},
+	{
+		"area": "Odéon"
+	},
+	{
+		"area": "Ménilmontant"
+	},
+	{
+		"area": "15e arrondissement"
+	},
+	{
+		"area": "Opéra"
+	},
+	{
+		"area": "7e arrondissement"
+	},
+	{
+		"area": "11e arrondissement"
+	},
+	{
+		"area": "Abbesses"
+	},
+	{
+		"area": "Chaillot"
+	},
+	{
+		"area": "Quartier de la Gare"
+	},
+	{
+		"area": "Gare du Nord"
+	},
+	{
+		"area": "Rennes-Sèvres"
+	},
+	{
+		"area": "10e arrondissement"
+	},
+	{
+		"area": "Pereire"
+	},
+	{
+		"area": "Plaisance"
+	},
+	{
+		"area": "Javel"
+	},
+	{
+		"area": "Louvre"
+	},
+	{
+		"area": "Paris et sa banlieue"
+	},
+	{
+		"area": "15 arrondissement"
+	},
+	{
+		"area": "Saint-Michel"
+	},
+	{
+		"area": "Place Vendôme"
+	},
+	{
+		"area": "Picpus"
+	},
+	{
+		"area": "Bastille"
+	},
+	{
+		"area": "Gare de l'Est"
+	},
+	{
+		"area": "République"
+	},
+	{
+		"area": "Jussieu"
+	},
+	{
+		"area": "Bercy"
+	},
+	{
+		"area": "Tour Eiffel"
+	},
+	{
+		"area": "Ile Saint-Louis"
+	},
+	{
+		"area": "Austerlitz"
+	},
+	{
+		"area": "Batignolles"
+	},
+	{
+		"area": "19e arrondissement"
+	},
+	{
+		"area": "Grenelle"
+	},
+	{
+		"area": "Bourse"
+	},
+	{
+		"area": "Saint-Germain-des-Prés"
+	},
+	{
+		"area": "Buttes-Chaumont"
+	},
+	{
+		"area": "Montparnasse"
+	},
+	{
+		"area": "18e arrondissement"
+	},
+	{
+		"area": "Ile aux cygnes"
+	},
+	{
+		"area": "Triangle d'Or"
+	},
+	{
+		"area": "Monceau"
+	},
+	{
+		"area": "La Chapelle"
+	},
+	{
+		"area": "Sentier"
+	},
+	{
+		"area": "Place d'Italie"
+	},
+	{
+		"area": "Epinettes"
+	},
+	{
+		"area": "Europe"
+	},
+	{
+		"area": "Nation"
+	},
+	{
+		"area": "Saint-Blaise"
+	},
+	{
+		"area": "Alésia"
+	},
+	{
+		"area": "Denfert-Rochereau"
+	},
+	{
+		"area": "Châtelet"
+	},
+	{
+		"area": "14e arrondissement"
+	},
+	{
+		"area": "Ile de la Cité"
+	},
+	{
+		"area": "Père-Lachaise"
+	},
+	{
+		"area": "Saint-Lazare"
+	},
+	{
+		"area": "Courbevoie"
+	},
+	{
+		"area": "Place de Clichy"
+	},
+	{
+		"area": "Place des Fêtes"
+	},
+	{
+		"area": "Paris"
+	},
+	{
+		"area": "Château Rouge"
+	}
+]
