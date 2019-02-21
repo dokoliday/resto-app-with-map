@@ -64,7 +64,7 @@ const creationObjetArea = restaurants
 //suppression des doublons avec lodash puis ajout d'un index unique par area
 const areaFiltreDoublon = uniqWith(creationObjetArea, isEqual)
 const aeraComplet = areaFiltreDoublon.map((e, index) => ({
-  id: index, name: e.area
+  id: index+1, name: e.area
 }
 ))
 
