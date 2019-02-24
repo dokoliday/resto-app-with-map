@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Head = styled.div
   `display: flex;
   background: rgba(0, 0, 0, 0.5);
-  padding:15vh
+  padding:8vh
   `
 const Button = styled.button`
   color: palevioletred;
@@ -25,7 +25,6 @@ class Header extends Component {
   render() {
     return (
       <Head>
-         <Button >Map</Button>
         <Title>Resto's</Title>
       </Head>
     );

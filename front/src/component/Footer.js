@@ -5,7 +5,6 @@ const Foot = styled.div
   `display: flex;
   background: rgba(0, 0, 0, 0.5);
   padding:15vh
-  margin-top:300px;
   `
 const Title = styled.h1`
   color:black;
