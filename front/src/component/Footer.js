@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Foot = styled.div
   `display: flex;
-  background: rgba(0, 0, 0, 0.5);
-  padding:15vh
-  `
-const Title = styled.h1`
-  color:black;
+  background: rgba(10, 30, 40, 0.6);
+  min-height:15vh
+    `
+const Title = styled.h3`
+  color:white;
   font-size: 2em;
   margin: auto;
   `
+
 
 class Footer extends Component {
   render() {
     return (
       <Foot>
-        <Title>byby</Title>
+       <Title>Copyrith Alexandre Smirnoff 2019</Title>
       </Foot>
     );
   }
