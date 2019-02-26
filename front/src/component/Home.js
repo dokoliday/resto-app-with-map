@@ -3,7 +3,8 @@ import axios from 'axios';
 import styled from 'styled-components';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-
+import Header from './Header';
+import Footer from './Footer';
 const Slide = styled.div
 `
 display:flex;
@@ -11,16 +12,17 @@ justify-content:space-around;
 `
 const Image = styled.img
     `
-    width:30vw !important
-    height:60vh;
+    width:30vw !important;
+    height:60vh !important;
+    margin-left:4vw;
     border:41px  solid rgba(10, 30, 40, 0.3) !important;
     border-radius:600px 600px;
-
+    margin-top:3vh;
   `
 const NewCarous = styled(Carousel)
     `
     .carousel .slide{
-        justify-content:space-beetween;
+        justify-content:space-around;
         background: rgba(330,330,330,0.5);
 
     }
@@ -38,18 +40,22 @@ const NewCarous = styled(Carousel)
   `
 const Paragraphe = styled.p
     `
-    color:rgba(310,232,159);
-    font-weight:bold
-    font-size: 3em;
-    text-shadow:4px 2px black;
-    margin-left:3vw;
-    margin-right:3vw;
+    color: black;
+    font-size: 4em;
+    font-weight:bold;
+    text-shadow:2px 2px white;
+    margin-left:10vw;
+    margin-right:3vw
+    text-align: right;
+    @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Shadows+Into+Light');
+     font-family: 'Amatic SC', cursive;
     
     `
 
 class Home extends Component {
     state = {
         restaurants: [],
+        
     }
 
 
@@ -64,7 +70,7 @@ class Home extends Component {
 
 
     getAllrestaurant = () => {
-        axios.get("http://localhost:1080/restaurants/allRestaurants")
+        axios.get("http://localhost:3080/restaurants/allRestaurants")
             .then(json => this.setState({ restaurants: json.data }))
     }
 
@@ -76,6 +82,8 @@ class Home extends Component {
 
     render() {
         return (
+            <div>
+            <Header/>
             <NewCarous
                 autoPlay={true}
                 showThumbs={false}
@@ -94,6 +102,8 @@ class Home extends Component {
                             </Paragraphe>
                         </Slide>)}
             </NewCarous>
+             <Footer/>
+             </div>
 
         );
     }

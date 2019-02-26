@@ -4,18 +4,23 @@ import styled from 'styled-components';
 import charly from '../asset/charly.png';
 import heart from '../asset/heart.png';
 
+const Alink =styled.a
+`color: white;
+text-decoration:none;`
 const ImageHeart =styled.img
 `width:2vw;
 height:5vh;
 `
 const Select= styled.select
-`
-margin-top:3em;
-padding:1em;
-background: rgba(310,232,59,0.5);
-font-size: 3vh;
-color:black;
-text-shadow:2px 2px white;
+
+  `color:black;
+  font-size: 1.5em;
+  margin:2vh;
+  padding:2vh;
+  border-style:none;
+  background-color:rgba(210,222,259,0.7);
+  border-radius:600px 600px;
+ 
 `
 const AllLieu = styled.div
   `display:flex
@@ -25,11 +30,12 @@ const Paragraphe = styled.p
   `
     display:flex;
     flex-direction:column;
-    color: rgba(310,232,159);
-    font-weight:bold
-    font-size: 3em;
-    text-shadow:4px 2px black
-    
+    color: white;
+    font-size: 4em;
+    text-shadow:2px 2px black
+    background: rgba(10, 30, 40, 0.6);;
+    @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Shadows+Into+Light');
+    font-family: 'Amatic SC', cursive;
     `
   
 class Lieu extends Component {
@@ -49,13 +55,13 @@ class Lieu extends Component {
 
 
   getRestaurantByArea = (id) => {
-    return axios.get(`http://localhost:1080/restaurants/allRestaurants/restaurantByArea/${id}`)
+    return axios.get(`http://localhost:3080/restaurants/allRestaurants/restaurantByArea/${id}`)
       // .then(json => console.log('tutu', json.data))
       .then(json => this.setState({ selectRestaurant: json.data }))
   }
 
   getAllArea = () => {
-    axios.get("http://localhost:1080/restaurants/allAreas")
+    axios.get("http://localhost:3080/restaurants/allAreas")
       .then(json => this.setState({ area: json.data }))
   }
 
@@ -76,7 +82,7 @@ class Lieu extends Component {
             )}
           </Select>
         </form>
-            <div>{this.state.selectRestaurant.map(e => <div><Paragraphe>{e.name}</Paragraphe>
+            <div>{this.state.selectRestaurant.map(e => <div><Paragraphe>{e.name}<br/>{e.address}<br/><Alink href={e.to_website} target="_blank">More infos</Alink></Paragraphe>
               {Array(e.editorial_rating).fill(<ImageHeart src={heart} />)}</div>)}</div>
        <div><img src={charly} /></div> 
 

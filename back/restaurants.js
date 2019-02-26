@@ -24,7 +24,6 @@ router.get('/allRestaurants/restaurantByArea/:numero', (req, res) => {
 })
 
 router.get('/allRestaurants/restaurantByName/:name_restaurant', (req, res) => {
-    const motif=`^("'"\.)?[^/]+/[^/]*)$`
     connection.query(`SELECT * FROM restaurants_cleaned  WHERE restaurants_cleaned.name =? `,req.params.name_restaurant.replace(/'/i, '+') , (err, results) => {
         if(err){
             res.status(500).send(err)

@@ -10,6 +10,8 @@ const Title = styled.h3`
   color:white;
   font-size: 2em;
   margin: auto;
+  @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Shadows+Into+Light');
+  font-family: 'Amatic SC', cursive;
   `
 
 
