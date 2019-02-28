@@ -4,18 +4,22 @@ import { Link } from 'react-router-dom'
 
 const Button = styled.button
   `color:white;
-  text-shadow:2px 2px black;
-  font-size: 2em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border-style:none;
-  background-color:rgba(210,222,259,0.5);
-  border-radius:600px 600px;
-  @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Shadows+Into+Light');
-  font-family: 'Amatic SC', cursive;`
+text-shadow:2px 2px black;
+font-size: 2em;
+margin: 1em;
+padding: 0.25em 1em;
+border-style:none;
+font-weight:bold;
+background: rgba(110, 330, 140, 0.6);
+border-radius:600px 600px;
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Shadows+Into+Light');
+font-family: 'Amatic SC', cursive;
+`
 
-class Acceuil extends Component {
+class Identification extends Component {
     
+
+
     render() {
             return (
                 <div>
@@ -30,4 +34,4 @@ class Acceuil extends Component {
 
 
 
-export default Acceuil;
+export default Identification;

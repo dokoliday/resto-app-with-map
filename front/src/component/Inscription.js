@@ -37,15 +37,19 @@ class Inscription extends Component {
             .then((response) => {
                 if (response.status === 200) {
                     this.setState({ inscription: true })
+                   
+                    console.log('inscri',response)
+
                 }
             });
     }
     render() {
 
-        if (this.state.inscription === true) {
-            return <Redirect to="/home" />
-        } else {
 
+
+        if (this.state.inscription === true) {
+            return <Redirect to="/auth" />
+        } else {
             return (
                 <div>
                     <form onSubmit={this.handleSubmit}>
@@ -58,6 +62,7 @@ class Inscription extends Component {
         }
     }
 }
+
 
 
 export default Inscription;

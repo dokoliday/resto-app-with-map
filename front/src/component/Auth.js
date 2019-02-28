@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { Route, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 const style =
     ` 
@@ -36,15 +36,15 @@ class Auth extends Component {
             .then((response) => {
                 if (response.data.length>0) {
                     this.setState({ identification: true })
+                    this.props.handleSingingSuccess(response.data)
                 }
             });
     }
     render() {
 
         if (this.state.identification === true) {
-            return <Redirect to="/maps" />
+            return <Redirect to="/app2" />
         } else {
-
             return (
                 <div>
                     <form onSubmit={this.handleSubmit}>
@@ -57,6 +57,7 @@ class Auth extends Component {
         }
     }
 }
+
 
 
 export default Auth;

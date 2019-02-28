@@ -3,8 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import Header from './Header';
-import Footer from './Footer';
+
 const Slide = styled.div
 `
 display:flex;
@@ -58,17 +57,6 @@ class Home extends Component {
         
     }
 
-
-    newId = event => {
-        const id = event.target.value
-        this.setState({ id }) // shortcut to: this.setState({ id: id })
-        this.getRestaurantByArea(id)
-            .then(() => console.log('1', this.state.selectRestaurant))
-    }
-
-
-
-
     getAllrestaurant = () => {
         axios.get("http://localhost:3080/restaurants/allRestaurants")
             .then(json => this.setState({ restaurants: json.data }))
@@ -83,7 +71,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-            <Header/>
+            
             <NewCarous
                 autoPlay={true}
                 showThumbs={false}
@@ -101,8 +89,11 @@ class Home extends Component {
                                 {e.description}
                             </Paragraphe>
                         </Slide>)}
+
+                        
             </NewCarous>
-             <Footer/>
+          
+            
              </div>
 
         );

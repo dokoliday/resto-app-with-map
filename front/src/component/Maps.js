@@ -5,6 +5,7 @@ import axios from 'axios'
 import styled from 'styled-components';
 
 
+
 const AllMaps = styled.div
   `
 max-height:100vh;
@@ -12,7 +13,7 @@ max-width:80vw;
 margin:auto;
 `
 const Button = styled.button
-`color:white;
+  `color:white;
 text-shadow:2px 2px black;
 font-size: 2em;
 margin: 1em;
@@ -24,19 +25,20 @@ border-radius:600px 600px;
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Shadows+Into+Light');
 font-family: 'Amatic SC', cursive;
 `
-  const SectionButton= styled.div
+const SectionButton = styled.div
   `display:flex;
   justify-content:space-around`
-const Myicon = new L.Icon({
-  iconUrl: require("../asset/burger.png"),
-  iconSize: [30, 30],
-});
+// const Myicon = new L.Icon({
+//   iconUrl: require("../asset/burger.png"),
+//   iconSize: [30, 30],
+// });
 
 class Maps extends Component {
   state = {
     data: [],
-    activeFilters:{category:"",rating:0},
+    activeFilters: { category: "", rating: 0 },
     zoom: 13,
+    
   }
 
   getAllrestaurant = () => {
@@ -48,20 +50,20 @@ class Maps extends Component {
     this.getAllrestaurant()
 
   }
-  
-  selectGoodBars=()=>{
-    this.setState({activeFilters:{category:"Bars",rating:5}})
+
+  selectGoodBars = () => {
+    this.setState({ activeFilters: { category: "Bars", rating: 5 } })
   }
-  
-  selectGoodRestaurants=()=>{
-    this.setState({activeFilters:{category:"Restaurants",rating:5}})
+
+  selectGoodRestaurants = () => {
+    this.setState({ activeFilters: { category: "Restaurants", rating: 5 } })
   }
-  selectBars=()=>{
-    this.setState({activeFilters:{category:"Bars",rating:0}})
+  selectBars = () => {
+    this.setState({ activeFilters: { category: "Bars", rating: 0 } })
   }
-  
-  selectRestaurants=()=>{
-    this.setState({activeFilters:{category:"Restaurants",rating:0}})
+
+  selectRestaurants = () => {
+    this.setState({ activeFilters: { category: "Restaurants", rating: 0 } })
   }
 
   filterByMainCategory(place) {
@@ -74,30 +76,33 @@ class Maps extends Component {
     return (
       <AllMaps>
         <SectionButton>
-        <Button onClick={this.selectRestaurants}>Resto's</Button>
-        <Button onClick={this.selectGoodRestaurants}>Les meilleurs Resto's</Button>
-        <Button onClick={this.selectGoodBars}>Les meilleurs Bar's</Button>
-        <Button onClick={this.selectBars}>Bar's</Button>
+          <Button onClick={this.selectRestaurants}>Resto's</Button>
+          <Button onClick={this.selectGoodRestaurants}>Les meilleurs Resto's</Button>
+          <Button onClick={this.selectGoodBars}>Les meilleurs Bar's</Button>
+          <Button onClick={this.selectBars}>Bar's</Button>
         </SectionButton>
-        
-        
+
+
         <Map center={[48.862659, 2.36371]} zoom={this.state.zoom} zoomControl={false} style={{ height: 600 }}>
-        
+
           <TileLayer
             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {this.state.data
-            .filter(a=>(this.filterByMainCategory(a)&&(a.editorial_rating>=this.state.activeFilters.rating)))
-            .map(b => <Marker position={[b.latitude, b.longitude]} icon={Myicon}>
-            <Popup>
-              {b.name}<br/>
-              {b.description}<br/>
-              <a href={b.to_website} target="_blank">mor infos</a>
-            </Popup>
-          </Marker>)} 
-          
-        <ZoomControl position="topright" />
+            .filter(a => (this.filterByMainCategory(a) && (a.editorial_rating >= this.state.activeFilters.rating)))
+            .map(b => <Marker position={[b.latitude, b.longitude]} icon={new L.Icon({
+              iconUrl: require("../asset/burger.png"),
+              iconSize: [this.state.zoom+20, this.state.zoom+20],
+            })}>
+              <Popup>
+                {b.name}<br />
+                {b.description}<br />
+                <a href={b.to_website} target="_blank">mor infos</a>
+              </Popup>
+            </Marker>)}
+
+          <ZoomControl position="topright" />
         </Map>
 
       </AllMaps>
