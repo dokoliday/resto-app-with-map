@@ -45,10 +45,6 @@ const Title = styled.h1`
 const Mylink = styled(Link)
 `text-decoration:none;`
 
-
-  
-
-
 class Header extends Component {
   render() {
     return (
@@ -56,8 +52,8 @@ class Header extends Component {
         <img src={logo} style={{width:200,height:200}}/>;
         <Mylink to="/home/"><Title>Resto's<br />Bonjour {this.props.name.pseudo}</Title></Mylink>
         <ButtonSection>
-        <Link to="/home/map"><Button>to map</Button></Link>
-        <Link to="/home/lieu"><Button>to lieu</Button></Link>
+        <Link to="/home/map"><Button>Resto's Map</Button></Link>
+        <Link to="/home/restaurantbyarea"><Button>Selection par Quartier</Button></Link>
         </ButtonSection>
       </Head>
     );

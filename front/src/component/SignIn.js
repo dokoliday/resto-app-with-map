@@ -38,7 +38,6 @@ class SignIn extends Component {
                 if (response.status === 200) {
                     this.setState({ inscription: true })
                     console.log(response);
-                    
                 }
             });
     }
@@ -51,7 +50,7 @@ class SignIn extends Component {
                     <form onSubmit={this.handleSubmit}>
                         <Input type="email" name="email" placeholder="enter your email" required />
                         <Input type="text" name="pseudo" placeholder="enter your pseudo" required />
-                        <Button type="submit">login</Button>
+                        <Button type="submit">Login</Button>
                     </form>
                 </div>
             )

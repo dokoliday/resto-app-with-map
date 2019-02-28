@@ -38,7 +38,7 @@ class Maps extends Component {
     data: [],
     activeFilters: { category: "", rating: 0 },
     zoom: 13,
-    
+
   }
 
   getAllrestaurant = () => {
@@ -72,8 +72,9 @@ class Maps extends Component {
   }
 
   render() {
-
+    const {zoom,data}=this.state
     return (
+     
       <AllMaps>
         <SectionButton>
           <Button onClick={this.selectRestaurants}>Resto's</Button>
@@ -81,30 +82,25 @@ class Maps extends Component {
           <Button onClick={this.selectGoodBars}>Les meilleurs Bar's</Button>
           <Button onClick={this.selectBars}>Bar's</Button>
         </SectionButton>
-
-
-        <Map center={[48.862659, 2.36371]} zoom={this.state.zoom} zoomControl={false} style={{ height: 600 }}>
-
+        <Map center={[48.862659, 2.36371]} zoom={zoom} zoomControl={false} style={{ height: 600 }}>
           <TileLayer
             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          {this.state.data
+          {data
             .filter(a => (this.filterByMainCategory(a) && (a.editorial_rating >= this.state.activeFilters.rating)))
             .map(b => <Marker position={[b.latitude, b.longitude]} icon={new L.Icon({
               iconUrl: require("../asset/burger.png"),
-              iconSize: [this.state.zoom+20, this.state.zoom+20],
+              iconSize: [zoom + 20, zoom + 20],
             })}>
               <Popup>
                 {b.name}<br />
                 {b.description}<br />
-                <a href={b.to_website} target="_blank">mor infos</a>
+                <a href={b.to_website} target="_blank">more infos</a>
               </Popup>
             </Marker>)}
-
           <ZoomControl position="topright" />
         </Map>
-
       </AllMaps>
     )
   }

@@ -3,6 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import charly from '../asset/charly.png';
 import heart from '../asset/heart.png';
+import Maps from './Maps';
 
 const Mylink =styled.a
 `color: white;
@@ -71,7 +72,7 @@ class RestaurantByArea extends Component {
   }
 
   render() {
-    // console.log(this.state.things)
+    
     return (
       <RestaurantByAreaStyled >
         <form>
@@ -83,7 +84,7 @@ class RestaurantByArea extends Component {
           </MySelect>
         </form>
             <div>{this.state.selectRestaurant.map(e => <div><Paragraphe>{e.name}<br/>{e.address}<br/><Mylink href={e.to_website} target="_blank">More infos</Mylink></Paragraphe>
-              {Array(e.editorial_rating).fill(<ImageRanking src={heart} />)}</div>)}</div>
+              {Array(e.editorial_rating).fill(<ImageRanking src={heart} />)}<Maps/></div>)}</div>
        <div><img src={charly} /></div> 
 
       </RestaurantByAreaStyled >

@@ -30,7 +30,8 @@ class SignUp extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         axios.post('http://localhost:3080/users/identification', {
-            email: event.target.email.value
+            email: event.target.email.value,
+            
         })
             .then((response) => {
                 if (response.data.length>0) {
@@ -43,13 +44,12 @@ class SignUp extends Component {
     render() {
 
         if (this.state.identification === true) {
-            return <Redirect to="/home" />
+            return <Redirect to="/home"/>
         } else {
             return (
                 <div>
                     <form onSubmit={this.handleSubmit}>
                         <Input type="email" name="email" placeholder="enter your email" required />
-                        <Input type="text" name="pseudo" placeholder="enter your pseudo" required />
                         <Button type="submit">login</Button>
                     </form>
                 </div>

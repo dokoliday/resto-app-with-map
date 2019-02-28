@@ -78,7 +78,8 @@ class MyCarousel extends Component {
             >
                 {this.state.restaurants
                     .map(e =>
-                        <Slide><Image
+                        <Slide>
+                            <Image
                             src={e.image_url}
                             style={{ width: "40vw" }} />
                             <Paragraphe>
