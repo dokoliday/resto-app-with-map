@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { Route, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 const style =
     ` 
@@ -23,32 +23,27 @@ const Input = styled.input
 const Button = styled.button
     `${style}`
 
-class Inscription extends Component {
+class SignUp extends Component {
     state = {
-        inscription: false
+        identification: false
     }
-
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('http://localhost:3080/users/inscription', {
-            pseudo: event.target.pseudo.value,
+        axios.post('http://localhost:3080/users/identification', {
             email: event.target.email.value
         })
             .then((response) => {
-                if (response.status === 200) {
-                    this.setState({ inscription: true })
-                   
-                    console.log('inscri',response)
-
+                if (response.data.length>0) {
+                    this.setState({ identification: true })
+                    this.props.handleSingingSuccess(response.data)
+                    console.log(response.data)
                 }
             });
     }
     render() {
 
-
-
-        if (this.state.inscription === true) {
-            return <Redirect to="/auth" />
+        if (this.state.identification === true) {
+            return <Redirect to="/home" />
         } else {
             return (
                 <div>
@@ -65,4 +60,4 @@ class Inscription extends Component {
 
 
 
-export default Inscription;
+export default SignUp;

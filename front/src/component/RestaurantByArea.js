@@ -4,14 +4,14 @@ import styled from 'styled-components';
 import charly from '../asset/charly.png';
 import heart from '../asset/heart.png';
 
-const Alink =styled.a
+const Mylink =styled.a
 `color: white;
 text-decoration:none;`
-const ImageHeart =styled.img
+const ImageRanking =styled.img
 `width:2vw;
 height:5vh;
 `
-const Select= styled.select
+const MySelect= styled.select
 
   `color:black;
   font-size: 1.5em;
@@ -22,7 +22,7 @@ const Select= styled.select
   border-radius:600px 600px;
  
 `
-const AllLieu = styled.div
+const RestaurantByAreaStyled = styled.div
   `display:flex
   justify-content:space-around;
   `
@@ -38,7 +38,7 @@ const Paragraphe = styled.p
     font-family: 'Amatic SC', cursive;
     `
   
-class Lieu extends Component {
+class RestaurantByArea extends Component {
   state = {
     area: [],
     selectRestaurant: [],
@@ -73,22 +73,22 @@ class Lieu extends Component {
   render() {
     // console.log(this.state.things)
     return (
-      <AllLieu>
+      <RestaurantByAreaStyled >
         <form>
-          <Select onChange={this.newId}>
+          <MySelect onChange={this.newId}>
             <option>lieu</option>
             {this.state.area.map(e =>
               <option value={e.id}>{e.name_area}</option>
             )}
-          </Select>
+          </MySelect>
         </form>
-            <div>{this.state.selectRestaurant.map(e => <div><Paragraphe>{e.name}<br/>{e.address}<br/><Alink href={e.to_website} target="_blank">More infos</Alink></Paragraphe>
-              {Array(e.editorial_rating).fill(<ImageHeart src={heart} />)}</div>)}</div>
+            <div>{this.state.selectRestaurant.map(e => <div><Paragraphe>{e.name}<br/>{e.address}<br/><Mylink href={e.to_website} target="_blank">More infos</Mylink></Paragraphe>
+              {Array(e.editorial_rating).fill(<ImageRanking src={heart} />)}</div>)}</div>
        <div><img src={charly} /></div> 
 
-      </AllLieu>
+      </RestaurantByAreaStyled >
     );
   }
 }
 
-export default Lieu;
+export default RestaurantByArea;

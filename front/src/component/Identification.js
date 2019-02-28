@@ -23,8 +23,8 @@ class Identification extends Component {
     render() {
             return (
                 <div>
-                  <Link to="/inscription"><Button>inscription</Button></Link>
-                   <Link to="/auth"><Button>authentification</Button></Link>
+                  <Link to="/signin"><Button>inscription</Button></Link>
+                   <Link to="/signup"><Button>authentification</Button></Link>
                 </div>
             )
         }

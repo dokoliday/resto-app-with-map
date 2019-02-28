@@ -23,27 +23,28 @@ const Input = styled.input
 const Button = styled.button
     `${style}`
 
-class Auth extends Component {
+class SignIn extends Component {
     state = {
-        identification: false
+        inscription: false
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('http://localhost:3080/users/identification', {
+        axios.post('http://localhost:3080/users/inscription', {
+            pseudo: event.target.pseudo.value,
             email: event.target.email.value
         })
             .then((response) => {
-                if (response.data.length>0) {
-                    this.setState({ identification: true })
-                    this.props.handleSingingSuccess(response.data)
+                if (response.status === 200) {
+                    this.setState({ inscription: true })
+                    console.log(response);
+                    
                 }
             });
     }
     render() {
-
-        if (this.state.identification === true) {
-            return <Redirect to="/app2" />
+        if (this.state.inscription === true) {
+            return <Redirect to="/signup" />
         } else {
             return (
                 <div>
@@ -57,7 +58,4 @@ class Auth extends Component {
         }
     }
 }
-
-
-
-export default Auth;
+export default SignIn;

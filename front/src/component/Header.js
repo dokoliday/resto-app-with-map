@@ -54,10 +54,10 @@ class Header extends Component {
     return (
       <Head>
         <img src={logo} style={{width:200,height:200}}/>;
-        <Mylink to="/app2/"><Title>Resto's<br />Bonjour {this.props.name.pseudo}</Title></Mylink>
+        <Mylink to="/home/"><Title>Resto's<br />Bonjour {this.props.name.pseudo}</Title></Mylink>
         <ButtonSection>
-        <Link to="/app2/maps"><Button>to map</Button></Link>
-        <Link to="/app2/lieu"><Button>to lieu</Button></Link>
+        <Link to="/home/map"><Button>to map</Button></Link>
+        <Link to="/home/lieu"><Button>to lieu</Button></Link>
         </ButtonSection>
       </Head>
     );
