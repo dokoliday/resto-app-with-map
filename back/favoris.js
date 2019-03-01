@@ -3,12 +3,11 @@ const express = require('express');
 const router = express.Router();
 
 
-router.post('/favoris', (req, res) => {
-    const { restaurant, user } = req.body;
-    connection.query(`INSERT INTO favoris VALUES (null,?,?);`, [restaurant, user], (err, results) => {
-        if (err) {
+router.get('/:id', (req, res) => {
+    const {id} = req.params
+    connection.query('SELECT * FROM favoris INNER JOIN restaurants_cleaned ON favoris.id_restaurant = restaurants_cleaned.id  WHERE id_user=?',id ,(err, results) => {
+        if(err){
             res.status(500).send(err)
-            console.log(req.body)
         } else {
             res.status(200).json(results);
         }

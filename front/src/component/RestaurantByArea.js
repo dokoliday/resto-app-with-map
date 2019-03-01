@@ -3,7 +3,8 @@ import axios from 'axios';
 import styled from 'styled-components';
 import charly from '../asset/charly.png';
 import heart from '../asset/heart.png';
-import Maps from './Maps';
+import { Map, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet'
+import L from 'leaflet'
 
 const Mylink =styled.a
 `color: white;
@@ -43,7 +44,8 @@ class RestaurantByArea extends Component {
   state = {
     area: [],
     selectRestaurant: [],
-    id: 0
+    id: 0,
+    zoom: 18,
   }
 
 
@@ -72,7 +74,6 @@ class RestaurantByArea extends Component {
   }
 
   render() {
-    
     return (
       <RestaurantByAreaStyled >
         <form>
@@ -84,7 +85,27 @@ class RestaurantByArea extends Component {
           </MySelect>
         </form>
             <div>{this.state.selectRestaurant.map(e => <div><Paragraphe>{e.name}<br/>{e.address}<br/><Mylink href={e.to_website} target="_blank">More infos</Mylink></Paragraphe>
-              {Array(e.editorial_rating).fill(<ImageRanking src={heart} />)}<Maps/></div>)}</div>
+              {Array(e.editorial_rating).fill(<ImageRanking src={heart} />)}
+              <Map center={[e.latitude, e.longitude]} zoom={this.state.zoom} zoomControl={false} style={{ height: 600 }}>
+
+<TileLayer
+  attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+/>
+<Marker position={[e.latitude, e.longitude]} icon={new L.Icon({
+    iconUrl: require("../asset/burger.png"),
+    iconSize: [this.state.zoom+20, this.state.zoom+20],
+  })}>
+    <Popup>
+      {e.name}<br />
+      {e.description}<br />
+      <a href={e.to_website} target="_blank">mor infos</a>
+    </Popup>
+  </Marker>)}
+
+<ZoomControl position="topright" />
+</Map>
+              </div>)}</div>
        <div><img src={charly} /></div> 
 
       </RestaurantByAreaStyled >
